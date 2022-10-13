@@ -7,6 +7,8 @@ const connectDatabase = () => {
         useUnifiedTopology: true
     }).then(con =>{
         console.log(`La base de datos mongo esta adecuadamente conectada con el servidor: ${con.connection.host}`)
+    }).catch(con =>{
+        console.log(`La conectividad con la base de datos Emplas fue fallida`)
     })
 }
 
