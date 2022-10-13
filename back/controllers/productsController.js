@@ -1,5 +1,7 @@
 //acá se crea el nuevo objeto del modelo producto
 const producto=require("../models/productos")
+//llamado del recurso fecth para poder usar require
+const fetch =(url)=>import('node-fetch').then(({default:fetch})=>fetch(url));
 
 //metodo para ver la lista de productos
 exports.getProducts=async(req, res, next)=>{
@@ -72,4 +74,23 @@ exports.newProduct=async(req, res, next)=>{
       product
    })
 }
+
+//uso del fetch ver todos los productos
+function verProductos(){
+   fetch('http://localhost:4000/api/productos')
+   .then(res=>res.json())
+   .then(res=>console.log(res))
+   .catch(err=>console.error(err))
+}
+//verProductos(); prueba la consulta en la terminal de visual para saber si funciona
+
+//uso del fetch ver los productos por id
+function verProductoPorID(id){
+   fetch('http://localhost:4000/api/producto/'+id)
+   .then(res=>res.json())
+   .then(res=>console.log(res))
+   .catch(err=>console.error(err))
+}
+
+//verProductoPorID('634815dbe19fabc3efb69eb3'); prueba la consulta en la terminal de visual para saber si funciona
 
