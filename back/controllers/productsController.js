@@ -2,10 +2,28 @@
 const producto=require("../models/productos")
 
 //metodo para ver la lista de productos
-exports.getProducts=(req, res, next)=>{
+exports.getProducts=async(req, res, next)=>{
+   const productos =await producto.find();
    res.status(200).json({
     success:true,
-    message:"En esta ubicación podrá visualizar todos los productos disponibles en su Tienda Emplas"
+    cantidad:productos.length,
+    productos
+   }) 
+}
+
+//metodo para ver un producto por Id
+exports.getProductById=async(req, res, next)=>{
+   const product =await producto.findById(req.params.id);
+   if (!product){
+      return res.status(404).json({
+         success:false,
+         message:"El Id ingresado no corresponde a un producto existente en la tienda Emplas"
+      })
+   }
+   res.status(200).json({
+      success:true,
+      message:"El producto existe en la base de datos de la tienda Emplas y contiene la siguiente información: ",
+      product
    }) 
 }
 
