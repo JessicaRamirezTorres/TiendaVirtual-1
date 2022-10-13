@@ -48,6 +48,22 @@ exports.updateProduct=async(req, res, next)=>{
    })
 }
 
+//metodo para eliminar un nuevo producto
+exports.deleteProduct=async(req, res, next)=>{
+   const product =await producto.findById(req.params.id);
+   if (!product){
+      return res.status(404).json({
+         success:false,
+         message:"El producto que desea eliminar no existe en la  base de datos de la tienda Emplas"
+      })
+   }
+   await product.remove();
+   res.status(200).json({
+      success:true,
+      message:"El producto fue eliminado correctamente de la Tienda Emplas"
+   })
+}
+
 //metodo para crear nuevo producto /api/productos
 exports.newProduct=async(req, res, next)=>{
    const product=await producto.create(req.body);
@@ -56,3 +72,4 @@ exports.newProduct=async(req, res, next)=>{
       product
    })
 }
+
