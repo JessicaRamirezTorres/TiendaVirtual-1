@@ -4,11 +4,11 @@ const producto=require("../models/productos")
 const fetch =(url)=>import('node-fetch').then(({default:fetch})=>fetch(url));
 
 //metodo para ver la lista de productos
-exports.getProducts=async(req, res, next)=>{
-   const productos =await producto.find();
+exports.getProducts=async(req,res,next) =>{
+   const productos= await producto.find();
    if (!productos){
       return res.status(404).json({
-         succes:false,
+         success:false,
          error:true
       })
    }
@@ -22,13 +22,16 @@ exports.getProducts=async(req, res, next)=>{
 
 //metodo para ver un producto por Id
 exports.getProductById=async(req, res, next)=>{
-   const product =await producto.findById(req.params.id);
+   const product=await producto.findById(req.params.id)
+
    if (!product){
       return res.status(404).json({
          success:false,
-         message:"El Id ingresado no corresponde a un producto existente en la tienda Emplas"
+         message: 'El Id ingresado no corresponde a un producto existente en la tienda Emplas',
+         error:true
       })
    }
+   
    res.status(200).json({
       success:true,
       message:"El producto existe en la base de datos de la tienda Emplas y contiene la siguiente información: ",
