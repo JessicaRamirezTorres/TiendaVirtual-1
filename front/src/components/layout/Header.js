@@ -35,7 +35,14 @@ const Header = () => {
                 </div>
 
             </nav>
+
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="./products/VistaAdministradorVentas">Vista Administrador Ventas</a>
+                </nav>
         </Fragment>
+
+
+    
     )
 }
 

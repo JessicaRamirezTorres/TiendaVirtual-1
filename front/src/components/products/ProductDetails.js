@@ -11,7 +11,7 @@ export const ProductDetails = () => {
     const { id } = useParams(); const dispatch = useDispatch();
     const alert = useAlert();
     const [quantity, setQuantity] = useState(1)
-    
+        
     useEffect(() => {
         dispatch(getProductDetails(id))
         if (error) {
