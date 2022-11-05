@@ -23,30 +23,30 @@ const Cart = () => {
    let cartItems=[
         {
             "_id": "63513206109735e58d94addd",
-            "nombre": "Agility Dog Creamy Food",
-            "precio": 69000,
-            "imagen": "./images/productos/agility_blando_perros.png",
+            "nombre": "Bolso de Corcho",
+            "precio": 125000,
+            "imagen": "./images/productos/Bolso_Corcho.jpg",
             "inventario": 40,
         },
         {
             "_id": "63513298109735e58d94ade0",
-            "nombre": "Chunky Cachorros alimento humedo",
-            "precio": 23000,
-            "imagen": "./images/productos/chunky_blando_perros.jpeg",
+            "nombre": "Escurridor de Platos",
+            "precio": 45000,
+            "imagen": "./images/productos/Escurridor_platos.jpg",
             "inventario": 120,
         },
         {
             "_id": "635132ea109735e58d94ade3",
-            "nombre": "Chunky gatitos alimento humedo",
-            "precio": 18000,
-            "imagen": "./images/productos/felix_blando_gatos.jpeg",
+            "nombre": "Organizador",
+            "precio": 39000,
+            "imagen": "./images/productos/Organizador.jpg",
             "inventario": 20,
         },
         {
             "_id": "63513379109735e58d94ade6",
-            "nombre": "Purina Pedegree Perros alimento humedo",
-            "precio": 20000,
-            "imagen":  "./images/productos/pedegree_blando_perros.jpeg",
+            "nombre": "Recipiente con divisiones",
+            "precio": 25000,
+            "imagen":  "./images/productos/Recipiente_divisiones.jpg",
             "inventario": 200,
         }
     ]
@@ -111,8 +111,8 @@ cartItems = Array.from(cartItems);
                             <div id="order_summary">
                                 <h4>Total de la Compra</h4>
                                 <hr />
-                                <p>Subtotal:  <span className="order-summary-values">$350.000</span></p>
-                                <p>Est. total: <span className="order-summary-values">$380.000</span></p>
+                                <p>Subtotal:  <span className="order-summary-values">$234.000</span></p>
+                                <p>Est. total: <span className="order-summary-values">$234.000</span></p>
 
                                 <hr />
                                 <button id="checkout_btn" className="btn btn-primary btn-block">Comprar!</button>
