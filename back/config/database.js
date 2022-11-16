@@ -6,7 +6,7 @@ const connectDatabase = () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(con =>{
-        console.log(`La base de datos mongo esta adecuadamente conectada con el servidor: ${con.connection.host}`)
+        console.log(`La base de datos de la Tienda Emplas esta adecuadamente conectada con el servidor: ${con.connection.host}`)
     }).catch(con =>{
         console.log(`La conectividad con la base de datos Emplas fue fallida`)
     })
